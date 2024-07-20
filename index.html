@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="titleContainer">
+        <img src="Cognifront logo.png" alt="">
+        <h1>WSN Graph Editor</h1>
+    </div>
+    <div id="app">
+        <div class="options">
+            <div class="dragable-elements">
+                <div class="container">
+                    <button id="createNew" style="width: 180px; height: 30px;" onclick="createNewPage()">+ &#160 Create new</button>
+                    <button id="openFile" style="width: 180px; height: 30px;" onclick="openFile()">Open File</button>
+
+                    <div class="icon" id="co-ordinator-node">
+                      <p class="icon-text" style="font-size: 12px;">C</p>
+                    </div>
+                    <div class="icon" id="sensor">
+                      <p class="icon-text" style="font-size: 12px;">S</p>
+                    </div>
+                    <div class="icon" id="repeater">
+                        <p class="icon-text" style="font-size: 12px;">R</p>
+                    </div>
+                </div>
+                
+                <div class="elements">
+                    <div class="example-draggable"><p id="main-nodes">Co-ordinator</p></div>
+                    <div class="example-draggable"><p id="sensors">Sensors</p></div>
+                    <div class="example-draggable"><p id="repeaters">Repeater</p></div>
+                </div>
+            </div>
+
+            <div class="node-controls">
+                <button onclick="startConnectionProcess()" id="connectNode">Connect Node</button>
+                <!-- <button onclick="clearSelection()">Clear Selection</button> -->
+            </div>
+            <div id="save-clear">
+                <button onclick="saveGraph()">Save Graph</button>
+                <button onclick="clearCanvas()" id="clearButton">Clear Screen</button>
+            </div>
+        </div>
+
+        <div class="canvas">
+            <div id="graph-container" class="example-dropzone">
+                <canvas id="graphCanvas" width="1150" height="620"></canvas>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="app.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</html>
